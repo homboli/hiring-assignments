@@ -1,11 +1,10 @@
-module github.com/e-conomic/hiring-assignments/machinelearningteam/summary-statistics-service
+module summary-statistics-service
 
 go 1.12
 
 require (
+	github.com/e-conomic/hiring-assignments/machinelearningteam/summary-statistics-service v0.0.0-20210217204447-a9c2f45a9058 // indirect
 	github.com/golang/protobuf v1.4.2
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/prometheus/client_golang v1.2.1
 	golang.org/x/net v0.0.0-20190613194153-d28f0bde5980
 	google.golang.org/grpc v1.34.0
