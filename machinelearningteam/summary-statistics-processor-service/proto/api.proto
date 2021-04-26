@@ -2,6 +2,9 @@ syntax = "proto3";
 
 package statistics;
 
+option go_package = "github.com/homboli/hiring-assignments/machinelearningteam/summary-statistics-processor-service/proto";
+
+
 service SummaryStatisticsProcessor {
   rpc ProcessStatistics (ProcessStatisticsRequest) returns (ProcessStatisticsReply) {}
 }
@@ -33,10 +36,10 @@ message DocumentSource {
   string http_uri = 1;
 }
 
-message AgregationColumns {
-  repeated string aggregationColumns;
+message AggregationColumns {
+  repeated string aggregationColumns = 1;
 }
 
 message ExcludedColumns {
-  repeated string excludedColumns;
+  repeated string excludedColumns = 1;
 }

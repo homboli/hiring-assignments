@@ -23,3 +23,8 @@ func (s *Server) SummarizeDocument(
 		Content: req.Document.GetContent(),
 	}, nil
 }
+
+func (s *Server) ProcessSummaryStatistics(
+	ctx context.Context,
+	rew *api.
+)
