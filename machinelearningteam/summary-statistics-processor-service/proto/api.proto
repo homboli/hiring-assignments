@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package statistics;
+
+service SummaryStatisticsProcessor {
+  rpc ProcessStatistics (ProcessStatisticsRequest) returns (ProcessStatisticsReply) {}
+}
+
+message ProcessStatisticsRequest {
+  Document document = 1;
+  AggregationColumns aggregationColumns = 2;
+  ExcludedColumns excludedColumns = 3;
+
+}
+
+message ProcessStatisticsReply {
+  bytes content = 1;
+}
+
+message Document {
+  // Document content, represented as a stream of bytes.
+  // Note: As with all `bytes` fields, protobuffers use a pure binary
+  // representation, whereas JSON representations use base64.
+  bytes content = 1;
+  // If both content and source is present use content.
+  DocumentSource source = 2;
+}
+
+message DocumentSource {
+  // The URI of the source document. Can be either:
+  //
+  // 1. A publicly-accessible image HTTP/HTTPS URL. When fetching images from
+  string http_uri = 1;
+}
+
+message AgregationColumns {
+  repeated string aggregationColumns;
+}
+
+message ExcludedColumns {
+  repeated string excludedColumns;
+}
