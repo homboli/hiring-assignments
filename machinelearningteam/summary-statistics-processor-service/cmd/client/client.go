@@ -19,14 +19,14 @@ func main() {
 		log.Fatalf("did not connect: %v", err)
 	}
 	defer conn.Close()
-	client := pb.NewDocumentSummarizerClient(conn)
+	client := pb.NewSummaryStatisticsProcessorClient(conn)
 
 	document, err := ioutil.ReadFile("test.csv")
 	if err != nil {
 		log.Fatal("Couldn't read input document")
 	}
 	ctx := context.Background()
-	resp, err := client.SummarizeDocument(ctx, &pb.SummarizeDocumentRequest{
+	resp, err := client.ProcessStatistics(ctx, &pb.SummarizeDocumentRequest{
 		Document: &pb.Document{
 			Content: document,
 		},
