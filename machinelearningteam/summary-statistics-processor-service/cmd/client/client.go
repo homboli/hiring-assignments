@@ -26,7 +26,7 @@ func main() {
 		log.Fatal("Couldn't read input document")
 	}
 	ctx := context.Background()
-	resp, err := client.ProcessStatistics(ctx, &pb.SummarizeDocumentRequest{
+	resp, err := client.ProcessStatistics(ctx, &pb.ProcessStatisticsRequest{
 		Document: &pb.Document{
 			Content: document,
 		},
