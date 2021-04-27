@@ -30,6 +30,13 @@ func main() {
 		Document: &pb.Document{
 			Content: document,
 		},
+		AggregationColumns: &pb.AggregationColumns{
+			AggregationColumns: ["BankEntryAmount"],
+		},
+		ExcludedColumns: &pb.ExcludedColumns{
+			ExcludedColumns: ["AccountName"],
+		}
+		
 	})
 
 	ioutil.WriteFile("out.csv", resp.GetContent(), 0644)
