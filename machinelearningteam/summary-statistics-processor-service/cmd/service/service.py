@@ -14,7 +14,7 @@ def process_summary(csv_data_in, excluded_columns, aggregation_columns):
 
 
 class SummaryStatisticsProcessorServer(SummaryStatisticsProcessorServicer):
-    def Detect(self, request, context):
+    def ProcessStatistics(self, request, context):
         processed_summary = process_summary(request.document)
         response = ProcessStatisticsReply(content = processed_summary)
         return response
