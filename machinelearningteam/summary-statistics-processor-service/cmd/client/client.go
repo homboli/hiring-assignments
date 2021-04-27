@@ -31,12 +31,11 @@ func main() {
 			Content: document,
 		},
 		AggregationColumns: &pb.AggregationColumns{
-			AggregationColumns: ["BankEntryAmount"],
+			AggregationColumns: []string{"BankEntryAmount"},
 		},
 		ExcludedColumns: &pb.ExcludedColumns{
-			ExcludedColumns: ["AccountName"],
-		}
-		
+			ExcludedColumns: []string{"AccountName"},
+		},
 	})
 
 	ioutil.WriteFile("out.csv", resp.GetContent(), 0644)
